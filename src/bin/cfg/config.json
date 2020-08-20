@@ -1,0 +1,5 @@
+{
+	"port": "8080",
+	"loglevel": "error",
+	"resources": {"local": "false", "url": "https://s3.eu-central-1.amazonaws.com/st-jetta/public"}
+}

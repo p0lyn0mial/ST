@@ -1,0 +1,30 @@
+extends ../../index.jade
+
+block title
+  title #{title}
+
+block content
+  include ../../menu.jade
+
+  div(class='row img-fs' style='background-image:url(#{paths.img}/wesela/ksiega/m_kw_1.jpg)')
+  
+  - var index = 0;
+  - data.forEach(function(item) { 
+  - index++;
+  div(class='row white')
+    div(class='large-6 medium-6 columns show-for-medium-up text-center')
+      img(class='img-circular' src='#{paths.img}/wesela/ksiega/#{item.img[0]}' tag='#{item.img[0]}')
+    div(class='large-6 medium-6 columns')
+      div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          div(class='d-table-cell')
+            blockquote #{item.text} 
+              cite #{item.title}
+        div(class='show-for-small-only')
+          div(class='d-table-cell')
+            blockquote #{item.text} 
+              cite #{item.title}
+  - if(index !== data.length)
+    div(class='row')
+      div(class='large-12 columns' style='height:15em; background-image:url(#{paths.img}/gray.jpg)')
+  - })

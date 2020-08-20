@@ -1,0 +1,16 @@
+body{ 
+	background:#fff url(../img/gray.jpg) 50% 0 repeat; 
+}
+
+.la-col {
+	border-right: 1px solid #ddd;
+}
+
+.bg-pink { 
+  background:url(../img/landing/pink.jpg) 0 0 repeat; 
+}
+
+.on-h-all-black:hover *{
+	color: #000000;
+}
+

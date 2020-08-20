@@ -1,0 +1,129 @@
+extends ../index.jade
+
+block title
+  title #{title}
+
+block content
+  - var heightEm = 1;
+  - var marginHeightLogoEm = 3;
+  include ../common/row_fixed_height.jade
+
+  +rowFixedHeight(marginHeightLogoEm)
+  div(class='row')
+    div(class='large-8 large-centered columns')
+      div(class='row')
+        div(class='large-12 columns')
+          img(src='#{paths.img}/st_logo.png')
+  +rowFixedHeight(marginHeightLogoEm)
+
+  div(class='row show-for-medium-up')
+    div(class='large-8 large-centered columns')
+      div(class='row')
+        div(class='large-12 medium-12 columns text-center c-white-all')
+          a(href='#{urls.restaurant}' class='on-h-all-black')
+            div(class='large-1 medium-1 columns la-col bg-purple') 
+              h1 R
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 E
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 S
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 T
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 A
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 U
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 R
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 A
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 C
+            div(class='large-1 medium-1  columns la-col bg-purple') 
+              h1 J
+            div(class='large-1 medium-1  columns la-col bg-purple end') 
+              h1 A
+
+  div(class='row small-uncollapse show-for-small-only bg-purple')
+    div(class='small-12 columns c-white-all')
+      a(href='#{urls.restaurant}' class='on-h-all-black')
+        h1 R E S T A U R A C J A
+  
+  div(class='row show-for-medium-up')
+    +rowFixedHeight(heightEm)
+    div(class='large-8 large-centered columns')
+      div(class='row')
+        div(class='large-12 medium-12 columns text-center c-white-all')
+          a(href='#{urls.wedding}' class='on-h-all-black')
+            div(class='large-1 medium-1 columns la-col bg-pink') 
+              h1 W
+            div(class='large-1 medium-1 columns la-col bg-pink') 
+              h1 E
+            div(class='large-1 medium-1 columns la-col bg-pink') 
+              h1 S
+            div(class='large-1 medium-1 columns la-col bg-pink') 
+              h1 E
+            div(class='large-1 medium-1 columns la-col bg-pink') 
+              h1 L
+            div(class='large-1 medium-1 columns la-col bg-pink end') 
+              h1 A
+  div(class='row small-uncollapse show-for-small-only bg-pink')
+    div(class='small-12 columns c-white-all')
+      a(href='#{urls.wedding}' class='on-h-all-black')
+        h1 W E S E L A
+  
+  div(class='row show-for-medium-up')
+    +rowFixedHeight(heightEm)
+    div(class='large-8 large-centered columns')
+      div(class='row')
+        div(class='large-12 medium-12 columns text-center c-white-all')
+          a(href='#{urls.catering}' class='on-h-all-black')
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 C
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 A
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 T
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 E
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 R
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 I
+            div(class='large-1 medium-1 columns la-col bg-orange') 
+              h1 N
+            div(class='large-1 medium-1 columns la-col bg-orange end') 
+              h1 G
+  div(class='row small-uncollapse show-for-small-only bg-orange')
+    div(class='small-12 columns c-white-all')
+      a(href='#{urls.catering}' class='on-h-all-black')
+        h1 C A T E R I N G
+  
+  div(class='row show-for-medium-up')
+    +rowFixedHeight(heightEm)
+    div(class='large-8 large-centered columns')
+      div(class='row')
+        div(class='large-12 medium-12 columns text-center c-white-all')
+          a(href='#{urls.kids}' class='on-h-all-black')
+            div(class='large-1 medium-1 columns bg-purple') 
+              h1 B
+            div(class='large-1 medium-1 columns bg-pink') 
+              h1 A
+            div(class='large-1 medium-1 columns bg-orange') 
+              h1 W
+            div(class='large-1 medium-1 columns bg-purple') 
+              h1 I
+            div(class='large-1 medium-1 columns bg-pink') 
+              h1 A
+            div(class='large-1 medium-1 columns bg-orange') 
+              h1 L
+            div(class='large-1 medium-1 columns bg-purple') 
+              h1 N
+            div(class='large-1 medium-1 columns bg-pink') 
+              h1 I
+            div(class='large-1 medium-1 columns bg-orange end') 
+              h1 A
+  div(class='row small-uncollapse show-for-small-only bg-purple')
+    div(class='small-12 columns c-white-all')
+      a(href='#{urls.kids}' class='on-h-all-black')
+        h1 B A W I A L N I A

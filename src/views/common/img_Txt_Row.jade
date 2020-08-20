@@ -1,0 +1,25 @@
+mixin imgLeftTxtRow(data)
+  div(class='row')
+    div(class='large-6 medium-6 columns show-for-medium-up')
+      img(src='#{data.blank.path}' style='background-image: url(#{data.img.path})' tag='#{data.img.tag}')
+    div(class='large-6 medium-6 columns')
+      div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          div(class='d-table-cell')
+            +#{data.txt}
+        div(class='show-for-small-only')
+          +#{data.txt}
+
+
+mixin imgRightTxtRow(data)
+  div(class='row')
+    div(class='large-6 medium-6 columns')
+      div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          div(class='d-table-cell')
+            +#{data.txt}
+        div(class='show-for-small-only')
+          div(class='d-table-cell')
+            +#{data.txt}
+    div(class='large-6 medium-6 columns show-for-medium-up')
+      img(src='#{data.blank.path}' style='background-image: url(#{data.img.path})' tag='#{data.img.tag}')

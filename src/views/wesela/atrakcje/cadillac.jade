@@ -1,0 +1,89 @@
+extends ../../index.jade
+
+block title
+  title #{title}
+
+block content
+  include ../../menu.jade
+  include ../../common/row_fixed_height.jade
+  - var heightEm = 6;
+
+  div(class='row')
+    div(id='parallax1' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/atrakcje/cadillac/c_4.jpg);')
+
+  div(class='row white')
+    +rowFixedHeight(heightEm)
+  div(class='row white')
+    div(class='large-12 medium-12 columns text-center')
+      h1 Wymarzony samochód do ślubu
+      p Działamy na terenie Trójmiasta i okolic !
+  div(class='row white')
+    +rowFixedHeight(heightEm)
+
+  div(class='row')
+    div(id='parallax2' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/atrakcje/cadillac/c_2.jpg);')
+
+  div(class='row white')
+    +rowFixedHeight(heightEm)
+  div(class='row white')
+    div(class='large-12 medium-12 columns text-center')
+      h1 Cadillac Fleetwood 1962
+      p Jest idealnym samochodem na wesela, sesje zdjęciowe oraz rocznice.
+  div(class='row white')
+    +rowFixedHeight(heightEm)
+
+  div(class='row')
+    div(id='parallax3' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/atrakcje/cadillac/c_1.jpg);')
+  
+  div(class='row white')
+    +rowFixedHeight(heightEm)
+  div(class='row white')
+    div(class='large-12 medium-12 columns text-center')
+      h1 Przestrzeń
+      p Ogromne, bo 6- cio osobowe wnętrze, unikalny wygląd oraz gabaryty zapewniają komfort dla pary młodej jak i świadków. 
+  div(class='row white')
+    +rowFixedHeight(heightEm)
+
+  div(class='row')
+    div(id='parallax4' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/atrakcje/cadillac/c_3.jpg);')
+  
+  div(class='row white')
+    div(class='large-12 columns text-center')
+       h1 Kontakt
+       div
+         p Tel: 509 779 319
+         p Email: cadillaciemdoslubu@gmail.com
+         p Facebook: Cadillaciem do ślubu
+
+block addjs
+  script(src='#{paths.js}/slick/slick.min.js')
+  script(src='#{paths.js}/greensock/minified/TweenMax.min.js')
+  script(src='#{paths.js}/scrollmagic/minified/ScrollMagic.min.js')
+  script(src='#{paths.js}/scrollmagic/minified/plugins/animation.gsap.min.js')
+  script(src='#{paths.js}/st/common.js')
+  script(src='#{paths.js}/f5/vendor/modernizr.js')
+  
+  script.
+    if (!window.Modernizr.touch) {
+      var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+        new ScrollMagic.Scene({triggerElement: "#parallax1"})
+      .setTween("#parallax1 > div", {y: "60%", ease: Linear.easeNone})
+      .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax2"})
+        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax3"})
+      .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+      .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax4"})
+      .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
+      .addTo(controller)
+    }

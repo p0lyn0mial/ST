@@ -1,0 +1,152 @@
+extends ../index.jade
+
+mixin saleblock
+  div(class='d-table-cell')
+    h1 Aż trzy sale weselne
+    p Wybierzcie salę, która zaspokoi Wasze potrzeby. 
+      //a(href='put_valid_url') Dowiedźcie się więcej. 
+mixin atrakcjeblock
+  div(class='d-table-cell')
+    h1 Moc atrakcji weselnych
+    p Marzysz o weselu idealnym ? To możliwe ! Zapewniamy Wam moc atrakcji, dzięki którym ten wyjątkowy wieczór na zawsze pozostanie w Waszej pamięci !
+      a(href='http://#{urls.domain}/#{urls.wedding}/#{urls.attractions}')  Dowiedzcie się więcej.
+
+mixin referencjeblock
+  div(class='d-table-cell')
+    h1 Doskonałe referencje
+    p 
+      a(href='http://#{urls.domain}/#{urls.wedding}/#{urls.guest_book}') Sprawdźcie 
+      |co mówią o nas inni.
+
+mixin osobistytxt
+  h1 Osobisty Wedding Planner
+  p Do Waszej dyspozycji. Żebyście zawsze czuli się bezpiecznie.
+
+block title
+  title #{title}
+
+block content
+  include ../menu.jade
+  include ../common/img_Txt_Row.jade
+
+  div(class='row')
+    div(id='parallax1' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/m_i1.jpg);')
+
+  div(class='row white')
+    div(class='large-6 medium-6 columns')
+      div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          +saleblock
+        div(class='show-for-small-only')
+          +saleblock
+    div(class='large-6 medium-6 columns show-for-medium-up text-center')
+      img(src='#{paths.img}/img_blank.gif' style='background-image: url(#{paths.img}/wesela/trzy_sale_weselne.png);' tag='trzy sale weselne')
+
+  div(class='row')
+    div(id='parallax2' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/m_i2.jpg);')
+
+  div(class='row white')
+    div(class='large-6 medium-6 columns show-for-medium-up text-center')
+      img(src='#{paths.img}/img_blank.gif' style='background-image: url(#{paths.img}/wesela/atrakcje_weselne_kolaz.png);' tag='atrakcje weselne kolaz')
+    div(class='large-6 medium-6 columns')
+       div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          +atrakcjeblock
+        div(class='show-for-small-only')
+          +atrakcjeblock
+
+  div(class='row')
+    div(id='parallax3' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/m_i5.jpg);')
+  
+  div(class='row white')
+    div(class='large-6 medium-6 columns')
+       div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          +referencjeblock
+        div(class='show-for-small-only')
+          +referencjeblock
+    div(class='large-6 medium-6 columns show-for-medium-up text-center')
+      img(src='#{paths.img}/img_blank.gif' style='background-image: url(#{paths.img}/wesela/doskonale_refer.jpg);' tag='referencje weselne')
+
+  div(class='row')
+    div(id='parallax4' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/m_i4.jpg);')
+  
+  - var data = { 'txt': 'osobistytxt', 'img': { 'tag': 'osobisty wedding planner', 'path': paths.img + '/wesela/osobisty_wedding_planner.jpg'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(class='white')
+      +imgLeftTxtRow(data)
+
+  div(class='row')
+    div(id='parallax6' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/m_i7.jpg);')
+
+  div(class='row white')
+    div(class='large-12 columns text-center')
+      h1 Galeria
+  div(class='row')
+    div(class='large-12 columns')
+      div(class='gallery-slider')
+        - gallery.forEach(function(item) { 
+        div(class='m-right')
+          img(data-lazy='#{paths.img}/wesela/galeria/#{item}' alt='#{item}')
+        - }) 
+
+  div(class='row')
+    div(id='parallax5' class='parallaxParent')
+      div(class='img-fs' style='background-image: url(#{paths.img}/wesela/m_i6.jpg);')
+  
+  div(class='row white')
+    div(class='large-12 columns text-center')
+
+       h1 Zadzwoń i umów się na spotkanie
+       div
+         p #{contact.name}
+         p Tel:  #{contact.phone}
+         p Email: 
+           a(href='mailto:#{contact.email}') #{contact.email}
+
+  div(class='row m-top-50')
+    div(class='large-12 columns text-center')
+         a(target='_blank' href='http://www.foto-chrominscy.pl') 
+             img(src='#{paths.img}/wesela/fcp2.jpg')
+
+block addjs
+  script(src='#{paths.js}/slick/slick.min.js')
+  script(src='#{paths.js}/greensock/minified/TweenMax.min.js')
+  script(src='#{paths.js}/scrollmagic/minified/ScrollMagic.min.js')
+  script(src='#{paths.js}/scrollmagic/minified/plugins/animation.gsap.min.js')
+  script(src='#{paths.js}/st/common.js')
+  script(src='#{paths.js}/f5/vendor/modernizr.js')
+  
+  script.
+    if (!window.Modernizr.touch) {
+      var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+        new ScrollMagic.Scene({triggerElement: "#parallax1"})
+      .setTween("#parallax1 > div", {y: "60%", ease: Linear.easeNone})
+      .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax2"})
+        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax3"})
+      .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+      .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax4"})
+      .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
+      .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax5"})
+      .setTween("#parallax5 > div", {y: "80%", ease: Linear.easeNone})
+      .addTo(controller)
+
+        new ScrollMagic.Scene({triggerElement: "#parallax6"})
+      .setTween("#parallax6 > div", {y: "80%", ease: Linear.easeNone})
+      .addTo(controller)
+    }
+    enableSlider('.gallery-slider');

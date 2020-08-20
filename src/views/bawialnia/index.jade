@@ -1,0 +1,88 @@
+extends ../index.jade
+
+mixin maintxt
+  div(class='d-table-cell c-white-all')
+    h1 Bawialnia
+    h3 Bawialnia powstała z myślą o dzieciach i ich rodzicach. Jest efektem własnego doświadczenia w poszukiwaniu domowego i bezpiecznego miejsca dla dzieci. Zapraszamy do Bawialni, w której to dzieci będą mogły spędzić atrakcyjnie wolny czas pod okiem wykwalifikowanej osoby.
+
+    h3 Zaopiekujemy się Twoją pociechą zarówno podczas Twojego wypadu na zakupy oraz podczas imprez okolicznościowych w Starej Kaszarni. I zawsze wtedy gdy odwiedzisz nas z całą rodziną.
+    h3 UWAGA: Bawialnia dostępna przy wcześniejszej rezerwacji.
+
+mixin references
+  div(class='d-table-cell')
+    h1 Kompetencje
+    p Milena jest magistrem pedagogiki opiekuńczej, skończyła studia podyplomowe z edukacji wczesnoszkolnej i przedszkolnej oraz liczne kursy dotyczące animacji dzieci.
+
+block title
+  title #{title}
+
+block content
+  include ../menu.jade
+
+  div(class='row img-fs' style='background-image:url(#{paths.img}/bawialnia/m_1.jpg)')
+
+  div(class='row green')
+    div(class='large-6 columns')
+      div(class='d-table text-center')
+        div(class='show-for-medium-up w-i-txt-height')
+          +maintxt
+        div(class='show-for-small-only')
+          +maintxt
+    div(class='large-6 columns show-for-medium-up')
+      img(src='#{paths.img}/img_blank.gif' style='background-image: url(#{paths.img}/bawialnia/m_col.png);' tag='bawialnia')
+
+  div(class='row orange c-white-all')
+    div(class='large-12 columns text-center')
+      h1 Zorganizujemy
+      ul(class='ul-none-large')
+        li Urodziny
+        li Imieniny
+        li Dzień dziecka
+        li Mikołajki
+        li Dzień Przedszkolaka
+
+
+  div(class='row red')
+    div(class='large-12 columns text-center c-white-all')
+      h1 Galeria
+  div(class='row red')
+    div(class='large-12 columns')
+      div(class='gallery-slider')
+        - gallery.forEach(function(item) { 
+        div(class='m-right')
+          img(data-lazy='#{paths.img}/bawialnia/galeria/#{item}' alt='#{item}')
+        - })
+
+  div(class='row text-center white')
+    div(class='large-12 columns')
+      +references
+
+  div(class='row gray text-center')
+    div(class='large-6 columns')
+      div(class='white price-box')
+        h1 REGULAMIN
+        div(class='gray-light')
+          p Zapraszamy do zapoznania się z aktualnym regulaminem
+        div(class='white')
+          a(target='_blank' href='#{paths.docs}/regulamin_bawialni.pdf' class='button round green') POBIERZ
+    div(class='large-6 columns')
+      div(class='white price-box')
+        h1 CENNIK
+        div(class='gray-light')
+          p Zapraszamy do zapoznania się z aktualnym cennikiem
+        div(class='white')
+          a(target='_blank' href='#{paths.docs}/cennik_bawialni.pdf' class='button round green') POBIERZ
+
+  div(class='row text-center blue c-white-all')
+    div(class='large-12 columns')
+      h1 Kontakt
+      div
+         p #{contact.name}
+         p Tel:  #{contact.phone}
+         p Email: 
+           a(href='mailto:#{contact.email}') #{contact.email}
+block addjs
+  script(src='#{paths.js}/slick/slick.min.js')
+  script(src='#{paths.js}/st/common.js')
+  script.
+    enableSlider('.gallery-slider');

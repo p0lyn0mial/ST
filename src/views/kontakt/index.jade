@@ -1,0 +1,30 @@
+extends ../index.jade
+
+block title
+  title #{title}
+
+block content
+  include ../menu.jade
+
+  div(class='row con-bg text-center c-white-all')
+    div(class='large-12 columns')
+      h1 Kontakt
+      div(class='ptop-large')
+        h3 Stara Kaszarnia ul. Dworcowa 13, 77 - 300 Człuchów
+        img(src='#{paths.img}/kontakt/geo.png' tag='geo icon') 
+        h3 53.66003N 17.36865E
+
+      div(class='ptop-large')
+        h3 Restauracja: #{data.restaurant.phone}
+        h3 E-mail: 
+           a(href='mailto:#{data.wedding.email}') #{data.wedding.email}
+
+      div(class='ptop-large')
+        h3 Wesela: #{data.wedding.phone}
+        h3 E-mail: 
+           a(href='mailto:#{data.wedding.email}') #{data.wedding.email}
+      
+      div(class='ptop-large')
+        h3 Imprezy okolicznościowe: #{data.kids.phone}
+        h3 E-mail: 
+           a(href='mailto:#{data.kids.email}') #{data.kids.email}

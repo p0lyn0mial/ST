@@ -1,0 +1,76 @@
+extends ../index.jade
+
+mixin okolicznosciowytxt
+  h1 Okolicznościowy
+  p Zapewniamy catering na różnego rodzaju imprezy (wesela, chrzciny, przyjęcia komunijne, urodziny, spotkania rodzinne, spotkania biznesowe, wieczory panieńskie i kawalerskie). Rozbudowana oferta cateringowa zawiera obsługę kelnerską przyjęć okolicznościowych organizowanych u Państwa w domu lub w dowolnym wybranym miejscu.
+
+mixin dzieciecytxt
+  h1 Dziecięcy
+  p Myślisz o urodzinkach dla dziecka w plenerze / ogrodzie ? Czemu nie :) Zorganizujemy urodziny dla Waszej Pociechy! Gwarantujemy przekąski przygotowane specjalnie dla dzieci oraz opiekę animatora, który poprowadzi całą imprezę.
+
+mixin barowytxt
+  h1 Barowy
+  p Kolorowe drinki i cocktaile ożywią każdą imprezę, m.in. wesele, wieczór panieński, wieczór kawalerski. Jeżeli chcecie imprezy innej niż wszystkie polecamy skorzystać z drink baru. Wasi goście będą zachwyceni, a znajomi szybko uznają Drink Bar za strzał w dziesiątkę. Zapewniamy sprzęt barmański oraz obsługę.
+
+mixin codziennytxt
+  h1 Codzienny
+  p Domowy obiad z dostawą do domu lub firmy ! Menu ustalamy z góry na cały tydzień, więc już dziś wiesz co zjesz jutro :)
+  a(href='#{urls.chilli}' target='_blank') Sprawdź !
+
+block title
+  title #{title}
+
+block content
+  include ../menu.jade
+  include ../common/img_Txt_Row.jade
+
+  div(class='row text-center bg-orange')
+    div(class='large-12 columns')
+      h1 Catering
+  div(class='row bg-orange text-center')
+      div(class='large-4 columns')
+        div(class='white price-box' data-equalizer-watch)
+          img(src='#{paths.img}/catering/icon1_o.jpg')
+          h1 Okolicznościowy
+          p Usługi cateringowe i eventowe.
+          a(href='#okolicznosciowy' class='button round green') SZCZEGÓŁY
+      div(class='large-4 columns')
+        div(class='white price-box' data-equalizer-watch)
+          img(src='#{paths.img}/catering/icon2_o.jpg')
+          h1 Dziecięcy
+          p Urodzinki dziecka w plenerze.
+          a(href='#dzieciecy' class='button round green') SZCZEGÓŁY
+      div(class='large-4 columns')
+        div(class='white price-box' data-equalizer-watch)
+          img(src='#{paths.img}/catering/icon3_o.jpg')
+          h1 Barowy
+          p Drink bar z dowozem do klienta.
+          a(href='#barowy' class='button round green') SZCZEGÓŁY
+     
+  - var data = { 'txt': 'okolicznosciowytxt', 'img': { 'tag': 'okolicznosciowy', 'path': paths.img + '/catering/icon1_large.jpg'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(id='okolicznosciowy' class='white')
+      +imgLeftTxtRow(data)
+
+  - data = { 'txt': 'dzieciecytxt', 'img': { 'tag': 'dzieciecy', 'path': paths.img + '/catering/icon2_large.png'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(id='dzieciecy' class='bg-orange')
+      +imgLeftTxtRow(data)
+
+  - data = { 'txt': 'barowytxt', 'img': { 'tag': 'barowy', 'path': paths.img + '/catering/icon3_large.jpg'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(id='barowy' class='white')
+      +imgLeftTxtRow(data)
+
+  - data = { 'txt': 'codziennytxt', 'img': { 'tag': 'codzienny', 'path': paths.img + '/catering/icon4_large.png'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(class='bg-orange')
+      +imgLeftTxtRow(data)
+
+  div(class='row white')
+    div(class='large-12 columns text-center')
+       h1 Kontakt
+       div
+         p #{contact.name}
+         p Tel:  #{contact.phone}
+         p Email: 
+           a(href='mailto:#{contact.email}') #{contact.email}
+
+//block addjs
+//  script(src='#{paths.js}/f5/foundation/foundation.equalizer.js')

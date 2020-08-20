@@ -1,0 +1,17 @@
+
+.parallaxParent {
+	height: 100vh;
+	overflow: hidden;
+}
+
+@media only screen and (min-width: 64.063em) {
+ .parallaxParent > * {
+ 	height: 120%;
+ 	position: relative;
+ 	top: -34%;
+ }
+}
+
+.m-top-50 {
+	margin-top:50px;
+}

@@ -1,0 +1,54 @@
+extends ../index.jade
+
+mixin welcometxt
+  h1 Witamy
+  h3 w restauracji Stara Kaszarnia ! Zrobimy wszystko co w naszej mocy, aby czas spędzony u nas był dla Państwa wspaniałym przeżyciem kulturalnym, duchowym oraz kulinarnym. By sprawił, że z wielką radością odwiedzą nas Państwo jeszcze wiele razy.
+
+mixin menutxt
+  h1 Menu
+  h3 Zapraszamy do zapoznania się z naszą ofertą. 
+    a(target='_blank' href='#{paths.docs}/menu.pdf' class='c-green-all') Pobierz aktualne menu.
+
+block title
+  title #{title}
+
+block content
+  include ../menu.jade
+  include ../common/img_Txt_Row.jade
+
+  - var data = { 'txt': 'welcometxt', 'img': { 'tag': 'restauracja', 'path': paths.img + '/restauracja/s_1.jpg'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(class='white')
+      +imgLeftTxtRow(data)
+
+  - data = { 'txt': 'menutxt', 'img': { 'tag': 'restauracja', 'path': paths.img + '/restauracja/menu_logo.png'}, 'blank': { 'path': paths.img + '/img_blank.gif'}}
+    div(class='bg-purple')
+      +imgRightTxtRow(data)
+
+    div(class='row white')
+      div(class='text-center')
+        div(class='large-12 columns')
+          div(class='white')
+            div()
+              img(src='#{paths.img}/restauracja/icon2_p.jpg')
+              h1 CATERING
+              p Sprawdź naszą bogatą ofertę cateringową
+              div(class='row')
+                div(class='small-3 small-centered columns text-left')
+                  ul
+                    li()
+                      a(href='#{urls.chilli}/Menu' target='_blank') Codzienny
+                    li Okolicznościowy
+                    li Dziecięcy
+                    li Barowy
+              div(class='white')
+                a(href='#{urls.catering}' class='button round') SZCZEGÓŁY
+
+  div(class='row bg-purple')
+    div(class='large-12 columns text-center')
+       h1 Kontakt
+       div
+         p Tel:  #{contact.phone}
+         p Email: 
+           a(href='mailto:#{contact.email}') #{contact.email}
+block addjs
+  script(src='#{paths.js}/f5/foundation/foundation.equalizer.js')

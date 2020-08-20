@@ -1,0 +1,21 @@
+.row {
+	max-width: 100%;
+}
+
+/*
+h1 { 
+	font-size: 3.75rem;
+}
+
+p { 
+	font-size: 2rem;
+}*/
+
+.row .row {
+	margin: 0px 0px;
+}
+
+.top-bar {
+	height: 3.8125rem;
+	padding-top: 8px;
+}

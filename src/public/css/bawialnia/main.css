@@ -1,0 +1,16 @@
+/* Font settings */
+.kids { font-family: 'Bowlby One', cursive; }
+
+/* background colors */
+.blue   { background: #15c1e5; }
+.red    { background: #f73f3f; }
+.orange  {background: #ffa200; }
+.gray { background-color: #e0e2e3; }
+.gray-light { background-color: #f7f7f7; }
+
+
+
+.ul-none-large {
+ list-style-type: none;
+ font-size: 2rem;
+}
