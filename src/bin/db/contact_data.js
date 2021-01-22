@@ -16,16 +16,16 @@ var data = {
 	wedding: {
 		'name': 'Karolina',
 		'phone': '604 509 947',
-		'email': 'restauracja@arbi.pl'
+		'email': 'karolina@starakaszarnia.pl'
 	},
 	kids: {
-		'name': 'Milena',
-		'phone': '781 939 949',
-		'email': 'lena@starakaszarnia.pl'
+		'name': 'Karolina',
+		'phone': '604 509 947',
+		'email': 'karolina@starakaszarnia.pl'
 	},
 	restaurant: {
 		'phone': '787 823 100',
-		'email': 'restauracja@arbi.pl'
+		'email': 'karolina@starakaszarnia.pl'
 	},
 	other: {
 		'restaurantname': 'Stara Kaszarnia',
